@@ -1,0 +1,74 @@
+{
+  "name": "md-plugins-highlight",
+  "version": "0.0.1",
+  "description": "[![version](https://img.shields.io/npm/v/md-plugins-highlight.svg?style=flat-square)](https://www.npmjs.com/package/md-plugins-highlight) [![downloads](https://img.shields.io/npm/dm/md-plugins-highlight.svg?style=flat-square)](https://www.npmjs.com/package/md-plugins-highlight) [![dependencies](https://img.shields.io/david/Val-istar-Guo/md-plugins-highlight.svg?style=flat-square)](https://www.npmjs.com/package/md-plugins-highlight)",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "ava",
+    "premili:upgrade": "npm install mili@latest -D",
+    "mili:upgrade": "mili upgrade",
+    "clean": "rm -rf ./dist/*",
+    "build": "npm run clean & rollup -c",
+    "prepublishOnly": "npm test; npm run build",
+    "precommit": "npm test"
+  },
+  "engines": {
+    "node": ">=8.9.4"
+  },
+  "mili": {
+    "type": "component",
+    "encoding": "utf8"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js",
+      "!**/macros.js",
+      "!**/*.macros.js"
+    ],
+    "sources": [
+      "src/**/*.js"
+    ],
+    "failFast": true,
+    "require": [
+      "babel-register"
+    ]
+  },
+  "devDependencies": {
+    "ava": "^1.0.0-beta.4",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "husky": "^0.14.3",
+    "mili": "0.0.4",
+    "rollup": "^0.58.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-json": "^3.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0"
+  },
+  "dependencies": {},
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Val-istar-Guo/md-plugins-highlight.git"
+  },
+  "keywords": [
+    "md",
+    "markdown",
+    "md-core",
+    "plugin",
+    "plugins",
+    "highlight",
+    "code"
+  ],
+  "author": "Val.istar.Guo <Val.istar.Guo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Val-istar-Guo/md-plugins-highlight/issues"
+  },
+  "homepage": "https://github.com/Val-istar-Guo/md-plugins-highlight#readme"
+}
