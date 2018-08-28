@@ -1,4 +1,4 @@
-import { middleware, combine } from 'md-core/utils'
+import { middleware, htmlDecode } from 'md-core/utils'
 import { version } from '../package.json'
 import hljs from 'highlight.js'
 import parseHtml from './parseHtml';
@@ -12,7 +12,7 @@ const parseNodes = (h, nodes) => nodes.map(item => {
     else return ''
   }
   // string
-  return item;
+  return htmlDecode(item);
 })
 
 const astNode = (node, code, language) => ({
