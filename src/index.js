@@ -36,13 +36,11 @@ export default middleware({
   input: 'code',
   parse({ value, language }, node, option) {
     const { automatic = true } = option
-    console.log(value, language)
 
     let code = null
     if (language && hljs.getLanguage(language)) {
       code = hljs.highlight(language, value)
     } else if (automatic) {
-      console.log('automatic')
       code = hljs.highlightAuto(value)
     } else {
       return
